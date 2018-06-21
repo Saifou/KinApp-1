@@ -2,11 +2,10 @@
   "name": "shoppinglist2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mathieuka.github.io/KinApp/",
+  "homepage": "https://saifou.github.io/KinApp-1/",
   "dependencies": {
     "@material-ui/core": "^1.2.1",
     "@material-ui/icons": "^1.1.0",
-    "gh-pages": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-iframe": "^1.1.0",
@@ -22,5 +21,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
