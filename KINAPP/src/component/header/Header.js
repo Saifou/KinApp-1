@@ -8,7 +8,9 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 
+
 import PatientView from './PatientView';
+import PopupLogin from './loginPassword/PopupLogin';
 
 
 
@@ -27,12 +29,13 @@ const styles = {
 
 class Header extends React.Component {
   state = {
-    auth: true,
+    auth: false,
     anchorEl: null,
   };
 
   handleChange = (event, checked) => {
     this.setState({ auth: checked });
+
   };
 
   handleMenu = event => {
@@ -49,7 +52,7 @@ class Header extends React.Component {
     Boolean(anchorEl);
 
     return (
-      <div className={classes.root}>
+      <div >
         <FormGroup>
           <FormControlLabel
             control={
@@ -58,6 +61,7 @@ class Header extends React.Component {
             label={auth ? 'Logout' : 'Login'}
           />
         </FormGroup>
+        
         <AppBar position="static">
           <Toolbar>
             <Typography variant="title" color="inherit" className={classes.flex}>
@@ -65,6 +69,7 @@ class Header extends React.Component {
             </Typography>
             {auth && (
               <div>
+                <PopupLogin/>
                 <PatientView _TraitementDone={this.props._TraitementDone} 
                 _TraitementImpossible={this.props._TraitementImpossible}  
                 patientFolder={this.props.patientFolder} 
